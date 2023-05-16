@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import VisionKit
 
 struct ScannerView: View {
+    @State private var startScanning = false
     @State private var scannedText = ""
     
     var body: some View {
@@ -15,10 +17,11 @@ struct ScannerView: View {
             Text("Scanned Text: \(scannedText)")
                 .padding()
             
-            CameraView { result in
-                DispatchQueue.main.async {
-                    scannedText = result
-                }
+            CameraView(startScanning: $startScanning, scanText: $scannedText)
+        }
+        .task {
+            if DataScannerViewController.isSupported && DataScannerViewController.isAvailable {
+                startScanning.toggle()
             }
         }
     }
