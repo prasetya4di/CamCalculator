@@ -37,6 +37,8 @@
 		4433A53E2A1363F700BC6D5F /* PickerDatabaseSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A53D2A1363F700BC6D5F /* PickerDatabaseSource.swift */; };
 		4433A5402A1364B800BC6D5F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A53F2A1364B800BC6D5F /* LoadingView.swift */; };
 		4433A5422A13653600BC6D5F /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5412A13653600BC6D5F /* ErrorView.swift */; };
+		4433A5452A1367BB00BC6D5F /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5442A1367BB00BC6D5F /* CameraView.swift */; };
+		4433A5472A13681000BC6D5F /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5462A13681000BC6D5F /* ScannerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +71,8 @@
 		4433A53D2A1363F700BC6D5F /* PickerDatabaseSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDatabaseSource.swift; sourceTree = "<group>"; };
 		4433A53F2A1364B800BC6D5F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4433A5412A13653600BC6D5F /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		4433A5442A1367BB00BC6D5F /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		4433A5462A13681000BC6D5F /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +216,7 @@
 		4433A5322A135B1800BC6D5F /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				4433A5432A1367A500BC6D5F /* Scanner */,
 				4433A5332A135B2C00BC6D5F /* Home */,
 			);
 			path = Presenter;
@@ -237,6 +242,15 @@
 				4433A5412A13653600BC6D5F /* ErrorView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		4433A5432A1367A500BC6D5F /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				4433A5442A1367BB00BC6D5F /* CameraView.swift */,
+				4433A5462A13681000BC6D5F /* ScannerView.swift */,
+			);
+			path = Scanner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,8 +344,10 @@
 				4433A5122A13392800BC6D5F /* SaveScanData.swift in Sources */,
 				4433A50F2A1338DF00BC6D5F /* ScanDataRepository.swift in Sources */,
 				4433A51C2A133C0E00BC6D5F /* UpdateDatabaseSource.swift in Sources */,
+				4433A5472A13681000BC6D5F /* ScannerView.swift in Sources */,
 				4433A5262A13445900BC6D5F /* ScanDataTable.swift in Sources */,
 				4433A5162A133AE700BC6D5F /* Setting.swift in Sources */,
+				4433A5452A1367BB00BC6D5F /* CameraView.swift in Sources */,
 				4433A53E2A1363F700BC6D5F /* PickerDatabaseSource.swift in Sources */,
 				4433A52C2A134DC700BC6D5F /* ScanEncryptedFileSource.swift in Sources */,
 				4433A5282A13457500BC6D5F /* ScanLocalSource.swift in Sources */,
