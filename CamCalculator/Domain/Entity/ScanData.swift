@@ -10,5 +10,5 @@ import Foundation
 struct ScanData {
     let id: UUID = UUID()
     let result: String
-    let date: Date
+    let createdDate: Date
 }

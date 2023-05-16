@@ -21,7 +21,7 @@ class SaveScanDataImpl: SaveScanData {
     func call(_ result: String) -> ScanData {
         let data = ScanData(
             result: result,
-            date: .now
+            createdDate: .now
         )
         repository.save(data)
         return data

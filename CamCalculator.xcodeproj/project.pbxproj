@@ -24,6 +24,10 @@
 		4433A51C2A133C0E00BC6D5F /* UpdateDatabaseSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A51B2A133C0E00BC6D5F /* UpdateDatabaseSource.swift */; };
 		4433A5212A133D2100BC6D5F /* SettingLocalSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5202A133D2100BC6D5F /* SettingLocalSource.swift */; };
 		4433A5242A133E0B00BC6D5F /* SettingTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5232A133E0B00BC6D5F /* SettingTable.swift */; };
+		4433A5262A13445900BC6D5F /* ScanDataTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5252A13445900BC6D5F /* ScanDataTable.swift */; };
+		4433A5282A13457500BC6D5F /* ScanLocalSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5272A13457500BC6D5F /* ScanLocalSource.swift */; };
+		4433A52A2A134C4A00BC6D5F /* EncryptedFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5292A134C4A00BC6D5F /* EncryptedFileManager.swift */; };
+		4433A52C2A134DC700BC6D5F /* ScanEncryptedFileSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A52B2A134DC700BC6D5F /* ScanEncryptedFileSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +47,10 @@
 		4433A51B2A133C0E00BC6D5F /* UpdateDatabaseSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDatabaseSource.swift; sourceTree = "<group>"; };
 		4433A5202A133D2100BC6D5F /* SettingLocalSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingLocalSource.swift; sourceTree = "<group>"; };
 		4433A5232A133E0B00BC6D5F /* SettingTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTable.swift; sourceTree = "<group>"; };
+		4433A5252A13445900BC6D5F /* ScanDataTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanDataTable.swift; sourceTree = "<group>"; };
+		4433A5272A13457500BC6D5F /* ScanLocalSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanLocalSource.swift; sourceTree = "<group>"; };
+		4433A5292A134C4A00BC6D5F /* EncryptedFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptedFileManager.swift; sourceTree = "<group>"; };
+		4433A52B2A134DC700BC6D5F /* ScanEncryptedFileSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanEncryptedFileSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +164,9 @@
 			children = (
 				4433A5222A133DFC00BC6D5F /* Table */,
 				4433A5202A133D2100BC6D5F /* SettingLocalSource.swift */,
+				4433A5272A13457500BC6D5F /* ScanLocalSource.swift */,
+				4433A5292A134C4A00BC6D5F /* EncryptedFileManager.swift */,
+				4433A52B2A134DC700BC6D5F /* ScanEncryptedFileSource.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -164,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				4433A5232A133E0B00BC6D5F /* SettingTable.swift */,
+				4433A5252A13445900BC6D5F /* ScanDataTable.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -251,11 +263,15 @@
 				4433A4F62A13339100BC6D5F /* ContentView.swift in Sources */,
 				4433A5242A133E0B00BC6D5F /* SettingTable.swift in Sources */,
 				4433A5212A133D2100BC6D5F /* SettingLocalSource.swift in Sources */,
+				4433A52A2A134C4A00BC6D5F /* EncryptedFileManager.swift in Sources */,
 				4433A4F42A13339100BC6D5F /* CamCalculatorApp.swift in Sources */,
 				4433A5122A13392800BC6D5F /* SaveScanData.swift in Sources */,
 				4433A50F2A1338DF00BC6D5F /* ScanDataRepository.swift in Sources */,
 				4433A51C2A133C0E00BC6D5F /* UpdateDatabaseSource.swift in Sources */,
+				4433A5262A13445900BC6D5F /* ScanDataTable.swift in Sources */,
 				4433A5162A133AE700BC6D5F /* Setting.swift in Sources */,
+				4433A52C2A134DC700BC6D5F /* ScanEncryptedFileSource.swift in Sources */,
+				4433A5282A13457500BC6D5F /* ScanLocalSource.swift in Sources */,
 				4433A5142A1339F200BC6D5F /* ReadScanData.swift in Sources */,
 				4433A50C2A13380F00BC6D5F /* ScanData.swift in Sources */,
 			);

@@ -9,8 +9,8 @@ import Foundation
 import RealmSwift
 
 protocol SettingLocalSource {
-    func read() -> Setting
-    func update(_ setting: Setting) async throws
+    func read() throws -> SettingTable
+    func update(_ setting: SettingTable) async throws
 }
 
 class SettingLocalSourceImpl: SettingLocalSource {
@@ -20,18 +20,17 @@ class SettingLocalSourceImpl: SettingLocalSource {
         self.realm = realm
     }
     
-    func read() -> Setting {
+    func read() throws -> SettingTable {
         return realm
             .object(
                 ofType: SettingTable.self,
                 forPrimaryKey: "setting")!
-            .toEntity()
     }
     
-    func update(_ setting: Setting) async throws {
+    func update(_ setting: SettingTable) async throws {
         try! await realm.asyncWrite {
             realm.add(
-                SettingTable(databaseSource: setting.databaseSource.rawValue),
+                setting,
                 update: .all
             )
         }

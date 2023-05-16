@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class SettingTable: Object {
+class SettingTable: Object, Codable {
     @Persisted(primaryKey: true) var _id: String = "setting"
     @Persisted var databaseSource: String
     
