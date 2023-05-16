@@ -489,6 +489,8 @@
 				DEVELOPMENT_TEAM = GSJL8ACDV5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "CamCalculator need access to your camera to scan text";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "CamCalculator need access to your gallery to scan text in a picture";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -518,6 +520,8 @@
 				DEVELOPMENT_TEAM = GSJL8ACDV5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "CamCalculator need access to your camera to scan text";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "CamCalculator need access to your gallery to scan text in a picture";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
