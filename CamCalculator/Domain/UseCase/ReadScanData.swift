@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ReadScanData {
-    func call() -> [ScanData]
+    func call() throws -> [ScanData]
 }
 
 class ReadScanDataImpl: ReadScanData {
@@ -18,7 +18,7 @@ class ReadScanDataImpl: ReadScanData {
         self.repository = repository
     }
     
-    func call() -> [ScanData] {
-        return repository.read()
+    func call() throws -> [ScanData] {
+        return try repository.read()
     }
 }

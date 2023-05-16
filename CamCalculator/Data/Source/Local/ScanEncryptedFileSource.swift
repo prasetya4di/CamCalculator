@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ScanEcryptedFileSource: ScanLocalSource {
+class ScanEncryptedFileSource: ScanLocalSource {
     let fileManager: EncryptedFileManager<ScanDataTable>
     
     init(fileManager: EncryptedFileManager<ScanDataTable>) {

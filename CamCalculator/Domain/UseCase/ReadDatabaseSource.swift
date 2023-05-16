@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ReadDatabaseSource {
-    func call() -> DatabaseSource
+    func call() throws -> DatabaseSource
 }
 
 class ReadDatabaseSourceImpl: ReadDatabaseSource {
@@ -18,7 +18,7 @@ class ReadDatabaseSourceImpl: ReadDatabaseSource {
         self.repository = repository
     }
     
-    func call() -> DatabaseSource {
-        return repository.read().databaseSource
+    func call() throws -> DatabaseSource {
+        return try repository.read().databaseSource
     }
 }

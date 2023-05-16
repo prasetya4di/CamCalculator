@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SaveScanData {
-    func call(_ result: String) -> ScanData
+    func call(_ result: String) async throws -> ScanData
 }
 
 class SaveScanDataImpl: SaveScanData {
@@ -18,12 +18,12 @@ class SaveScanDataImpl: SaveScanData {
         self.repository = repository
     }
     
-    func call(_ result: String) -> ScanData {
+    func call(_ result: String) async throws -> ScanData {
         let data = ScanData(
             result: result,
             createdDate: .now
         )
-        repository.save(data)
+        try await repository.save(data)
         return data
     }
 }

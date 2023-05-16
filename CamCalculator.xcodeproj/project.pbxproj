@@ -29,6 +29,7 @@
 		4433A52A2A134C4A00BC6D5F /* EncryptedFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5292A134C4A00BC6D5F /* EncryptedFileManager.swift */; };
 		4433A52C2A134DC700BC6D5F /* ScanEncryptedFileSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A52B2A134DC700BC6D5F /* ScanEncryptedFileSource.swift */; };
 		4433A52F2A13572400BC6D5F /* SettingRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A52E2A13572400BC6D5F /* SettingRepositoryImpl.swift */; };
+		4433A5312A13585D00BC6D5F /* ScanDataRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5302A13585D00BC6D5F /* ScanDataRepositoryImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		4433A5292A134C4A00BC6D5F /* EncryptedFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptedFileManager.swift; sourceTree = "<group>"; };
 		4433A52B2A134DC700BC6D5F /* ScanEncryptedFileSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanEncryptedFileSource.swift; sourceTree = "<group>"; };
 		4433A52E2A13572400BC6D5F /* SettingRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRepositoryImpl.swift; sourceTree = "<group>"; };
+		4433A5302A13585D00BC6D5F /* ScanDataRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanDataRepositoryImpl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				4433A52E2A13572400BC6D5F /* SettingRepositoryImpl.swift */,
+				4433A5302A13585D00BC6D5F /* ScanDataRepositoryImpl.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				4433A5282A13457500BC6D5F /* ScanLocalSource.swift in Sources */,
 				4433A52F2A13572400BC6D5F /* SettingRepositoryImpl.swift in Sources */,
 				4433A5142A1339F200BC6D5F /* ReadScanData.swift in Sources */,
+				4433A5312A13585D00BC6D5F /* ScanDataRepositoryImpl.swift in Sources */,
 				4433A50C2A13380F00BC6D5F /* ScanData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
