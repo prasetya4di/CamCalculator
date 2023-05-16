@@ -20,6 +20,7 @@
 		4433A5142A1339F200BC6D5F /* ReadScanData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5132A1339F200BC6D5F /* ReadScanData.swift */; };
 		4433A5162A133AE700BC6D5F /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5152A133AE700BC6D5F /* Setting.swift */; };
 		4433A5182A133B7600BC6D5F /* SettingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5172A133B7600BC6D5F /* SettingRepository.swift */; };
+		4433A51A2A133BA500BC6D5F /* ReadDatabaseSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5192A133BA500BC6D5F /* ReadDatabaseSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		4433A5132A1339F200BC6D5F /* ReadScanData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadScanData.swift; sourceTree = "<group>"; };
 		4433A5152A133AE700BC6D5F /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		4433A5172A133B7600BC6D5F /* SettingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRepository.swift; sourceTree = "<group>"; };
+		4433A5192A133BA500BC6D5F /* ReadDatabaseSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadDatabaseSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			children = (
 				4433A5112A13392800BC6D5F /* SaveScanData.swift */,
 				4433A5132A1339F200BC6D5F /* ReadScanData.swift */,
+				4433A5192A133BA500BC6D5F /* ReadDatabaseSource.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4433A5182A133B7600BC6D5F /* SettingRepository.swift in Sources */,
+				4433A51A2A133BA500BC6D5F /* ReadDatabaseSource.swift in Sources */,
 				4433A4F62A13339100BC6D5F /* ContentView.swift in Sources */,
 				4433A4F42A13339100BC6D5F /* CamCalculatorApp.swift in Sources */,
 				4433A5122A13392800BC6D5F /* SaveScanData.swift in Sources */,
