@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var databaseSource: DatabaseSource = .realmDb
+    let scanDatas: [ScanData]
+    
     var body: some View {
         ScrollView {
             VStack {
-                ScanResults(scanDatas: [])
+                PickerDatabaseSource(databaseSource: $databaseSource)
+                ScanResults(scanDatas: scanDatas)
+                Spacer()
             }
         }
         .navigationTitle("Cam Calculator")
@@ -25,6 +30,20 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        let scanData = ScanData(
+            input: "2 + 3",
+            result: "5",
+            createdDate: .now
+        )
+        
+        HomeView(
+        	scanDatas: [
+                scanData,
+                scanData,
+                scanData,
+                scanData,
+            	scanData,
+            ]
+        )
     }
 }

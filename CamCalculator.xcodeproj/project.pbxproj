@@ -34,6 +34,7 @@
 		4433A5382A135CA800BC6D5F /* ScanToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5372A135CA800BC6D5F /* ScanToolbarButton.swift */; };
 		4433A53A2A135E5F00BC6D5F /* ScanResultItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5392A135E5E00BC6D5F /* ScanResultItem.swift */; };
 		4433A53C2A13610F00BC6D5F /* ScanResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A53B2A13610F00BC6D5F /* ScanResults.swift */; };
+		4433A53E2A1363F700BC6D5F /* PickerDatabaseSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A53D2A1363F700BC6D5F /* PickerDatabaseSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		4433A5372A135CA800BC6D5F /* ScanToolbarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanToolbarButton.swift; sourceTree = "<group>"; };
 		4433A5392A135E5E00BC6D5F /* ScanResultItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultItem.swift; sourceTree = "<group>"; };
 		4433A53B2A13610F00BC6D5F /* ScanResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResults.swift; sourceTree = "<group>"; };
+		4433A53D2A1363F700BC6D5F /* PickerDatabaseSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDatabaseSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 				4433A5372A135CA800BC6D5F /* ScanToolbarButton.swift */,
 				4433A5392A135E5E00BC6D5F /* ScanResultItem.swift */,
 				4433A53B2A13610F00BC6D5F /* ScanResults.swift */,
+				4433A53D2A1363F700BC6D5F /* PickerDatabaseSource.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				4433A51C2A133C0E00BC6D5F /* UpdateDatabaseSource.swift in Sources */,
 				4433A5262A13445900BC6D5F /* ScanDataTable.swift in Sources */,
 				4433A5162A133AE700BC6D5F /* Setting.swift in Sources */,
+				4433A53E2A1363F700BC6D5F /* PickerDatabaseSource.swift in Sources */,
 				4433A52C2A134DC700BC6D5F /* ScanEncryptedFileSource.swift in Sources */,
 				4433A5282A13457500BC6D5F /* ScanLocalSource.swift in Sources */,
 				4433A52F2A13572400BC6D5F /* SettingRepositoryImpl.swift in Sources */,
