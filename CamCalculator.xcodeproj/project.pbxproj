@@ -13,6 +13,7 @@
 		4433A4FB2A13339100BC6D5F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4433A4FA2A13339100BC6D5F /* Preview Assets.xcassets */; };
 		4433A5032A13372200BC6D5F /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 4433A5022A13372200BC6D5F /* Realm */; };
 		4433A5052A13372200BC6D5F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4433A5042A13372200BC6D5F /* RealmSwift */; };
+		4433A5082A1337CF00BC6D5F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4433A5072A1337CF00BC6D5F /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +22,7 @@
 		4433A4F52A13339100BC6D5F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4433A4F72A13339100BC6D5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4433A4FA2A13339100BC6D5F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		4433A5062A13378900BC6D5F /* .gitignore.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = .gitignore.md; sourceTree = "<group>"; };
+		4433A5072A1337CF00BC6D5F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +41,6 @@
 		4433A4E72A13339100BC6D5F = {
 			isa = PBXGroup;
 			children = (
-				4433A5062A13378900BC6D5F /* .gitignore.md */,
 				4433A4F22A13339100BC6D5F /* CamCalculator */,
 				4433A4F12A13339100BC6D5F /* Products */,
 			);
@@ -61,6 +61,7 @@
 				4433A4F52A13339100BC6D5F /* ContentView.swift */,
 				4433A4F72A13339100BC6D5F /* Assets.xcassets */,
 				4433A4F92A13339100BC6D5F /* Preview Content */,
+				4433A5072A1337CF00BC6D5F /* .gitignore */,
 			);
 			path = CamCalculator;
 			sourceTree = "<group>";
@@ -139,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4433A4FB2A13339100BC6D5F /* Preview Assets.xcassets in Resources */,
+				4433A5082A1337CF00BC6D5F /* .gitignore in Resources */,
 				4433A4F82A13339100BC6D5F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
