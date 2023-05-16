@@ -22,6 +22,8 @@
 		4433A5182A133B7600BC6D5F /* SettingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5172A133B7600BC6D5F /* SettingRepository.swift */; };
 		4433A51A2A133BA500BC6D5F /* ReadDatabaseSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5192A133BA500BC6D5F /* ReadDatabaseSource.swift */; };
 		4433A51C2A133C0E00BC6D5F /* UpdateDatabaseSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A51B2A133C0E00BC6D5F /* UpdateDatabaseSource.swift */; };
+		4433A5212A133D2100BC6D5F /* SettingLocalSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5202A133D2100BC6D5F /* SettingLocalSource.swift */; };
+		4433A5242A133E0B00BC6D5F /* SettingTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5232A133E0B00BC6D5F /* SettingTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		4433A5172A133B7600BC6D5F /* SettingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRepository.swift; sourceTree = "<group>"; };
 		4433A5192A133BA500BC6D5F /* ReadDatabaseSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadDatabaseSource.swift; sourceTree = "<group>"; };
 		4433A51B2A133C0E00BC6D5F /* UpdateDatabaseSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDatabaseSource.swift; sourceTree = "<group>"; };
+		4433A5202A133D2100BC6D5F /* SettingLocalSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingLocalSource.swift; sourceTree = "<group>"; };
+		4433A5232A133E0B00BC6D5F /* SettingTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 		4433A4F22A13339100BC6D5F /* CamCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				4433A51D2A133CF300BC6D5F /* Data */,
 				4433A5092A1337F000BC6D5F /* Domain */,
 				4433A4F32A13339100BC6D5F /* CamCalculatorApp.swift */,
 				4433A4F52A13339100BC6D5F /* ContentView.swift */,
@@ -128,6 +133,39 @@
 				4433A51B2A133C0E00BC6D5F /* UpdateDatabaseSource.swift */,
 			);
 			path = UseCase;
+			sourceTree = "<group>";
+		};
+		4433A51D2A133CF300BC6D5F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4433A51E2A133CF800BC6D5F /* Source */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		4433A51E2A133CF800BC6D5F /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				4433A51F2A133D0000BC6D5F /* Local */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		4433A51F2A133D0000BC6D5F /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				4433A5222A133DFC00BC6D5F /* Table */,
+				4433A5202A133D2100BC6D5F /* SettingLocalSource.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		4433A5222A133DFC00BC6D5F /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				4433A5232A133E0B00BC6D5F /* SettingTable.swift */,
+			);
+			path = Table;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +249,8 @@
 				4433A5182A133B7600BC6D5F /* SettingRepository.swift in Sources */,
 				4433A51A2A133BA500BC6D5F /* ReadDatabaseSource.swift in Sources */,
 				4433A4F62A13339100BC6D5F /* ContentView.swift in Sources */,
+				4433A5242A133E0B00BC6D5F /* SettingTable.swift in Sources */,
+				4433A5212A133D2100BC6D5F /* SettingLocalSource.swift in Sources */,
 				4433A4F42A13339100BC6D5F /* CamCalculatorApp.swift in Sources */,
 				4433A5122A13392800BC6D5F /* SaveScanData.swift in Sources */,
 				4433A50F2A1338DF00BC6D5F /* ScanDataRepository.swift in Sources */,

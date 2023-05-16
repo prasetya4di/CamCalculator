@@ -7,9 +7,9 @@
 
 import Foundation
 
-enum DatabaseSource {
-	case file
-    case realmDb
+enum DatabaseSource: String {
+	case file = "file"
+    case realmDb = "realm_db"
 }
 
 struct Setting {

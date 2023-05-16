@@ -21,6 +21,6 @@ class UpdateDatabaseSourceImpl: UpdateDatabaseSource {
     
     func call(_ source: DatabaseSource) {
         let setting = Setting(databaseSource: source)
-        repository.update(source)
+        repository.update(setting)
     }
 }
