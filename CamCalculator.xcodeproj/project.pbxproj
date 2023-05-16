@@ -21,6 +21,7 @@
 		4433A5162A133AE700BC6D5F /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5152A133AE700BC6D5F /* Setting.swift */; };
 		4433A5182A133B7600BC6D5F /* SettingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5172A133B7600BC6D5F /* SettingRepository.swift */; };
 		4433A51A2A133BA500BC6D5F /* ReadDatabaseSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5192A133BA500BC6D5F /* ReadDatabaseSource.swift */; };
+		4433A51C2A133C0E00BC6D5F /* UpdateDatabaseSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A51B2A133C0E00BC6D5F /* UpdateDatabaseSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		4433A5152A133AE700BC6D5F /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		4433A5172A133B7600BC6D5F /* SettingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRepository.swift; sourceTree = "<group>"; };
 		4433A5192A133BA500BC6D5F /* ReadDatabaseSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadDatabaseSource.swift; sourceTree = "<group>"; };
+		4433A51B2A133C0E00BC6D5F /* UpdateDatabaseSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDatabaseSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				4433A5112A13392800BC6D5F /* SaveScanData.swift */,
 				4433A5132A1339F200BC6D5F /* ReadScanData.swift */,
 				4433A5192A133BA500BC6D5F /* ReadDatabaseSource.swift */,
+				4433A51B2A133C0E00BC6D5F /* UpdateDatabaseSource.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				4433A4F42A13339100BC6D5F /* CamCalculatorApp.swift in Sources */,
 				4433A5122A13392800BC6D5F /* SaveScanData.swift in Sources */,
 				4433A50F2A1338DF00BC6D5F /* ScanDataRepository.swift in Sources */,
+				4433A51C2A133C0E00BC6D5F /* UpdateDatabaseSource.swift in Sources */,
 				4433A5162A133AE700BC6D5F /* Setting.swift in Sources */,
 				4433A5142A1339F200BC6D5F /* ReadScanData.swift in Sources */,
 				4433A50C2A13380F00BC6D5F /* ScanData.swift in Sources */,
