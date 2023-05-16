@@ -15,6 +15,7 @@
 		4433A5052A13372200BC6D5F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4433A5042A13372200BC6D5F /* RealmSwift */; };
 		4433A5082A1337CF00BC6D5F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4433A5072A1337CF00BC6D5F /* .gitignore */; };
 		4433A50C2A13380F00BC6D5F /* ScanData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A50B2A13380F00BC6D5F /* ScanData.swift */; };
+		4433A50F2A1338DF00BC6D5F /* ScanDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A50E2A1338DF00BC6D5F /* ScanDataRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		4433A4FA2A13339100BC6D5F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4433A5072A1337CF00BC6D5F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		4433A50B2A13380F00BC6D5F /* ScanData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanData.swift; sourceTree = "<group>"; };
+		4433A50E2A1338DF00BC6D5F /* ScanDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanDataRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		4433A5092A1337F000BC6D5F /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				4433A50D2A1338CD00BC6D5F /* Repository */,
 				4433A50A2A1337F900BC6D5F /* Entity */,
 			);
 			path = Domain;
@@ -91,6 +94,14 @@
 				4433A50B2A13380F00BC6D5F /* ScanData.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		4433A50D2A1338CD00BC6D5F /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				4433A50E2A1338DF00BC6D5F /* ScanDataRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +184,7 @@
 			files = (
 				4433A4F62A13339100BC6D5F /* ContentView.swift in Sources */,
 				4433A4F42A13339100BC6D5F /* CamCalculatorApp.swift in Sources */,
+				4433A50F2A1338DF00BC6D5F /* ScanDataRepository.swift in Sources */,
 				4433A50C2A13380F00BC6D5F /* ScanData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
