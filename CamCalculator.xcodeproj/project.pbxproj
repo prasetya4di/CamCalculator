@@ -30,6 +30,8 @@
 		4433A52C2A134DC700BC6D5F /* ScanEncryptedFileSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A52B2A134DC700BC6D5F /* ScanEncryptedFileSource.swift */; };
 		4433A52F2A13572400BC6D5F /* SettingRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A52E2A13572400BC6D5F /* SettingRepositoryImpl.swift */; };
 		4433A5312A13585D00BC6D5F /* ScanDataRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5302A13585D00BC6D5F /* ScanDataRepositoryImpl.swift */; };
+		4433A5352A135B3800BC6D5F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5342A135B3800BC6D5F /* HomeView.swift */; };
+		4433A5382A135CA800BC6D5F /* ScanToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5372A135CA800BC6D5F /* ScanToolbarButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		4433A52B2A134DC700BC6D5F /* ScanEncryptedFileSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanEncryptedFileSource.swift; sourceTree = "<group>"; };
 		4433A52E2A13572400BC6D5F /* SettingRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRepositoryImpl.swift; sourceTree = "<group>"; };
 		4433A5302A13585D00BC6D5F /* ScanDataRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanDataRepositoryImpl.swift; sourceTree = "<group>"; };
+		4433A5342A135B3800BC6D5F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4433A5372A135CA800BC6D5F /* ScanToolbarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanToolbarButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 		4433A4F22A13339100BC6D5F /* CamCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				4433A5322A135B1800BC6D5F /* Presenter */,
 				4433A51D2A133CF300BC6D5F /* Data */,
 				4433A5092A1337F000BC6D5F /* Domain */,
 				4433A4F32A13339100BC6D5F /* CamCalculatorApp.swift */,
@@ -194,6 +199,31 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		4433A5322A135B1800BC6D5F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4433A5332A135B2C00BC6D5F /* Home */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4433A5332A135B2C00BC6D5F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4433A5362A135C7900BC6D5F /* Components */,
+				4433A5342A135B3800BC6D5F /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4433A5362A135C7900BC6D5F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4433A5372A135CA800BC6D5F /* ScanToolbarButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -290,6 +320,8 @@
 				4433A5142A1339F200BC6D5F /* ReadScanData.swift in Sources */,
 				4433A5312A13585D00BC6D5F /* ScanDataRepositoryImpl.swift in Sources */,
 				4433A50C2A13380F00BC6D5F /* ScanData.swift in Sources */,
+				4433A5382A135CA800BC6D5F /* ScanToolbarButton.swift in Sources */,
+				4433A5352A135B3800BC6D5F /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
