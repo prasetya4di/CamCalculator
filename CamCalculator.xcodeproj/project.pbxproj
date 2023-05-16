@@ -38,7 +38,7 @@
 		4433A5402A1364B800BC6D5F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A53F2A1364B800BC6D5F /* LoadingView.swift */; };
 		4433A5422A13653600BC6D5F /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5412A13653600BC6D5F /* ErrorView.swift */; };
 		4433A5452A1367BB00BC6D5F /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5442A1367BB00BC6D5F /* CameraView.swift */; };
-		4433A5472A13681000BC6D5F /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5462A13681000BC6D5F /* ScannerView.swift */; };
+		4433A5472A13681000BC6D5F /* CameraScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5462A13681000BC6D5F /* CameraScannerView.swift */; };
 		4433A54A2A13B1BB00BC6D5F /* Regexs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5492A13B1BB00BC6D5F /* Regexs.swift */; };
 		4433A54D2A13B9C600BC6D5F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A54C2A13B9C600BC6D5F /* StringExtension.swift */; };
 		4433A5502A13C10400BC6D5F /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 4433A54F2A13C10400BC6D5F /* AlertToast */; };
@@ -76,7 +76,7 @@
 		4433A53F2A1364B800BC6D5F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4433A5412A13653600BC6D5F /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		4433A5442A1367BB00BC6D5F /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
-		4433A5462A13681000BC6D5F /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		4433A5462A13681000BC6D5F /* CameraScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraScannerView.swift; sourceTree = "<group>"; };
 		4433A5492A13B1BB00BC6D5F /* Regexs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regexs.swift; sourceTree = "<group>"; };
 		4433A54C2A13B9C600BC6D5F /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		4433A5522A13C29100BC6D5F /* ScanTextInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanTextInfoView.swift; sourceTree = "<group>"; };
@@ -226,7 +226,7 @@
 		4433A5322A135B1800BC6D5F /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				4433A5432A1367A500BC6D5F /* Scanner */,
+				4433A5552A13C5D300BC6D5F /* CameraScanner */,
 				4433A5332A135B2C00BC6D5F /* Home */,
 			);
 			path = Presenter;
@@ -254,15 +254,6 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		4433A5432A1367A500BC6D5F /* Scanner */ = {
-			isa = PBXGroup;
-			children = (
-				4433A5512A13C27700BC6D5F /* Components */,
-				4433A5462A13681000BC6D5F /* ScannerView.swift */,
-			);
-			path = Scanner;
-			sourceTree = "<group>";
-		};
 		4433A5482A13B1AD00BC6D5F /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +277,15 @@
 				4433A5522A13C29100BC6D5F /* ScanTextInfoView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		4433A5552A13C5D300BC6D5F /* CameraScanner */ = {
+			isa = PBXGroup;
+			children = (
+				4433A5512A13C27700BC6D5F /* Components */,
+				4433A5462A13681000BC6D5F /* CameraScannerView.swift */,
+			);
+			path = CameraScanner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,7 +384,7 @@
 				4433A54D2A13B9C600BC6D5F /* StringExtension.swift in Sources */,
 				4433A50F2A1338DF00BC6D5F /* ScanDataRepository.swift in Sources */,
 				4433A51C2A133C0E00BC6D5F /* UpdateDatabaseSource.swift in Sources */,
-				4433A5472A13681000BC6D5F /* ScannerView.swift in Sources */,
+				4433A5472A13681000BC6D5F /* CameraScannerView.swift in Sources */,
 				4433A5262A13445900BC6D5F /* ScanDataTable.swift in Sources */,
 				4433A5162A133AE700BC6D5F /* Setting.swift in Sources */,
 				4433A5452A1367BB00BC6D5F /* CameraView.swift in Sources */,

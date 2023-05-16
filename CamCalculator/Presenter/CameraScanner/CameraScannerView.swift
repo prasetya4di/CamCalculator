@@ -9,7 +9,7 @@ import AlertToast
 import SwiftUI
 import VisionKit
 
-struct ScannerView: View {
+struct CameraScannerView: View {
     @State private var startScanning = false
     @State private var showInvalidTextToast = false
     @State private var scannedText = ""
@@ -40,6 +40,6 @@ struct ScannerView: View {
 
 struct ScannerVIew_Previews: PreviewProvider {
     static var previews: some View {
-        ScannerView()
+        CameraScannerView()
     }
 }

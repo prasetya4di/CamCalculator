@@ -10,7 +10,7 @@ import SwiftUI
 struct ScanToolbarButton: View {
     var body: some View {
         NavigationLink {
-            ScannerView()
+            CameraScannerView()
         } label: {
             Text("Add Input")
         }
