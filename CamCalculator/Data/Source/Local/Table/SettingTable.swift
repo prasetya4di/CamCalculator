@@ -13,6 +13,7 @@ class SettingTable: Object {
     @Persisted var databaseSource: String
     
     convenience init(databaseSource: String) {
+        self.init()
         self.databaseSource = databaseSource
     }
     

@@ -10,7 +10,7 @@ import RealmSwift
 
 protocol SettingLocalSource {
     func read() -> Setting
-    func update(_ setting: Setting) throws
+    func update(_ setting: Setting) async throws
 }
 
 class SettingLocalSourceImpl: SettingLocalSource {
@@ -28,8 +28,8 @@ class SettingLocalSourceImpl: SettingLocalSource {
             .toEntity()
     }
     
-    func update(_ setting: Setting) throws {
-        try! realm.write {
+    func update(_ setting: Setting) async throws {
+        try! await realm.asyncWrite {
             realm.add(
                 SettingTable(databaseSource: setting.databaseSource.rawValue),
                 update: .all
