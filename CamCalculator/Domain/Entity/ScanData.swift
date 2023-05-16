@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ScanData {
+struct ScanData: Identifiable {
     let id: UUID = UUID()
     let input: String
     let result: String

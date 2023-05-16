@@ -9,8 +9,10 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        VStack {
-            
+        ScrollView {
+            VStack {
+                ScanResults(scanDatas: [])
+            }
         }
         .navigationTitle("Cam Calculator")
         .toolbar {
