@@ -17,6 +17,7 @@
 		4433A50C2A13380F00BC6D5F /* ScanData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A50B2A13380F00BC6D5F /* ScanData.swift */; };
 		4433A50F2A1338DF00BC6D5F /* ScanDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A50E2A1338DF00BC6D5F /* ScanDataRepository.swift */; };
 		4433A5122A13392800BC6D5F /* SaveScanData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5112A13392800BC6D5F /* SaveScanData.swift */; };
+		4433A5142A1339F200BC6D5F /* ReadScanData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5132A1339F200BC6D5F /* ReadScanData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		4433A50B2A13380F00BC6D5F /* ScanData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanData.swift; sourceTree = "<group>"; };
 		4433A50E2A1338DF00BC6D5F /* ScanDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanDataRepository.swift; sourceTree = "<group>"; };
 		4433A5112A13392800BC6D5F /* SaveScanData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveScanData.swift; sourceTree = "<group>"; };
+		4433A5132A1339F200BC6D5F /* ReadScanData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadScanData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				4433A5112A13392800BC6D5F /* SaveScanData.swift */,
+				4433A5132A1339F200BC6D5F /* ReadScanData.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				4433A4F42A13339100BC6D5F /* CamCalculatorApp.swift in Sources */,
 				4433A5122A13392800BC6D5F /* SaveScanData.swift in Sources */,
 				4433A50F2A1338DF00BC6D5F /* ScanDataRepository.swift in Sources */,
+				4433A5142A1339F200BC6D5F /* ReadScanData.swift in Sources */,
 				4433A50C2A13380F00BC6D5F /* ScanData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

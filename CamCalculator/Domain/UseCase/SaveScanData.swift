@@ -15,7 +15,7 @@ class SaveScanDataImpl: SaveScanData {
     private let repository: ScanDataRepository
     
     init(_ repository: ScanDataRepository) {
-        self.repository = ScanDataRepository
+        self.repository = repository
     }
     
     func call(_ result: String) -> ScanData {
