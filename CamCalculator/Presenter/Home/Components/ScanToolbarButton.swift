@@ -9,11 +9,12 @@ import SwiftUI
 
 struct ScanToolbarButton: View {
     var body: some View {
-        Button {
-            //Todo add navigate to camera or gallery
+        NavigationLink {
+            ScannerView()
         } label: {
-         	Text("Scan")
+            Text("Add Input")
         }
+
     }
 }
 

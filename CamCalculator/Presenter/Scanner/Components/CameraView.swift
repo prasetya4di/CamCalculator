@@ -13,6 +13,7 @@ struct CameraView: UIViewControllerRepresentable {
     
     @Binding var startScanning: Bool
     @Binding var scanText: String
+    @Binding var showInvalidTextToast: Bool
     
     func makeUIViewController(context: Context) -> DataScannerViewController {
         let controller = DataScannerViewController(
@@ -49,10 +50,20 @@ struct CameraView: UIViewControllerRepresentable {
         func dataScanner(_ dataScanner: DataScannerViewController, didTapOn item: RecognizedItem) {
             switch item {
                 case .text(let text):
-                    parent.scanText = text.transcript
+                    guard let result = text
+                        .transcript
+                        .extractMatchingSubstring(
+                            with: supportedMathPattern
+                        ), !result.isEmpty
+                    else {
+                        parent.showInvalidTextToast.toggle()
+                        return
+                    }
+                    
+                    parent.scanText = result
+                    dataScanner.stopScanning()
                 default: break
             }
         }
-        
     }
 }

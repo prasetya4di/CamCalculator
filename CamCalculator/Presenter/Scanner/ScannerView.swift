@@ -5,19 +5,30 @@
 //  Created by Prasetya on 16/05/23.
 //
 
+import AlertToast
 import SwiftUI
 import VisionKit
 
 struct ScannerView: View {
     @State private var startScanning = false
+    @State private var showInvalidTextToast = false
     @State private var scannedText = ""
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Scanned Text: \(scannedText)")
-                .padding()
+        ZStack(alignment: .bottom) {
+            CameraView(
+                startScanning: $startScanning,
+                scanText: $scannedText,
+                showInvalidTextToast: $showInvalidTextToast
+            )
             
-            CameraView(startScanning: $startScanning, scanText: $scannedText)
+            ScanTextInfoView()
+        }
+        .toast(isPresenting: $showInvalidTextToast) {
+            AlertToast(
+                displayMode: .banner(.pop),
+                type: .regular,
+                title: "Invalid Math Equations")
         }
         .task {
             if DataScannerViewController.isSupported && DataScannerViewController.isAvailable {
