@@ -8,6 +8,6 @@
 import Foundation
 
 protocol SettingRepository {
-    func read() -> Setting
-    func update(_ setting: Setting)
+    func read() throws -> Setting
+    func update(_ setting: Setting) async throws
 }

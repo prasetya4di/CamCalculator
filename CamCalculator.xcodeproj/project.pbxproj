@@ -28,6 +28,7 @@
 		4433A5282A13457500BC6D5F /* ScanLocalSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5272A13457500BC6D5F /* ScanLocalSource.swift */; };
 		4433A52A2A134C4A00BC6D5F /* EncryptedFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5292A134C4A00BC6D5F /* EncryptedFileManager.swift */; };
 		4433A52C2A134DC700BC6D5F /* ScanEncryptedFileSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A52B2A134DC700BC6D5F /* ScanEncryptedFileSource.swift */; };
+		4433A52F2A13572400BC6D5F /* SettingRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A52E2A13572400BC6D5F /* SettingRepositoryImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		4433A5272A13457500BC6D5F /* ScanLocalSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanLocalSource.swift; sourceTree = "<group>"; };
 		4433A5292A134C4A00BC6D5F /* EncryptedFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptedFileManager.swift; sourceTree = "<group>"; };
 		4433A52B2A134DC700BC6D5F /* ScanEncryptedFileSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanEncryptedFileSource.swift; sourceTree = "<group>"; };
+		4433A52E2A13572400BC6D5F /* SettingRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRepositoryImpl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 		4433A51D2A133CF300BC6D5F /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				4433A52D2A13571500BC6D5F /* Repository */,
 				4433A51E2A133CF800BC6D5F /* Source */,
 			);
 			path = Data;
@@ -178,6 +181,14 @@
 				4433A5252A13445900BC6D5F /* ScanDataTable.swift */,
 			);
 			path = Table;
+			sourceTree = "<group>";
+		};
+		4433A52D2A13571500BC6D5F /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				4433A52E2A13572400BC6D5F /* SettingRepositoryImpl.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +283,7 @@
 				4433A5162A133AE700BC6D5F /* Setting.swift in Sources */,
 				4433A52C2A134DC700BC6D5F /* ScanEncryptedFileSource.swift in Sources */,
 				4433A5282A13457500BC6D5F /* ScanLocalSource.swift in Sources */,
+				4433A52F2A13572400BC6D5F /* SettingRepositoryImpl.swift in Sources */,
 				4433A5142A1339F200BC6D5F /* ReadScanData.swift in Sources */,
 				4433A50C2A13380F00BC6D5F /* ScanData.swift in Sources */,
 			);
