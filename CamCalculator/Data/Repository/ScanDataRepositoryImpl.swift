@@ -29,6 +29,7 @@ class ScanDataRepositoryImpl: ScanDataRepository {
     
     func save(_ scanData: ScanData) async throws {
         let data = ScanDataTable(
+            input: scanData.input,
             result: scanData.result,
             createdDate: scanData.createdDate
         )
