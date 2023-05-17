@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject private var photoScannerModel = PhotoScannerModel()
     @State private var databaseSource: DatabaseSource = .realmDb
     let scanDatas: [ScanData]
     
@@ -22,7 +23,7 @@ struct HomeView: View {
         .navigationTitle("Cam Calculator")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                ScanToolbarButton()
+                ScanToolbarButton(viewModel: photoScannerModel)
             }
         }
     }

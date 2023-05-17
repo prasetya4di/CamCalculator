@@ -6,20 +6,26 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct ScanToolbarButton: View {
+    @ObservedObject var viewModel: PhotoScannerModel
+    
     var body: some View {
-        NavigationLink {
-            CameraScannerView()
-        } label: {
-            Text("Add Input")
-        }
-
+        #if false
+        ShowCameraScannerButton()
+        #else
+        ShowPhotoScannerButton(
+        	viewModel: viewModel
+        )
+        #endif
     }
 }
 
 struct ScanToolbarButton_Previews: PreviewProvider {
     static var previews: some View {
-        ScanToolbarButton()
+        ScanToolbarButton(
+        	viewModel: PhotoScannerModel()
+        )
     }
 }
