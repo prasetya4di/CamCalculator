@@ -10,17 +10,15 @@ import PhotosUI
 import CoreTransferable
 
 @MainActor
-class PhotoScannerModel: ObservableObject {
-    
-    // MARK: - Photo Scanner Image
+class PhotoPickerModel: ObservableObject {
     
     enum ImageState: Equatable {
         case empty
         case loading(Progress)
-        case success(Image)
+        case success(UIImage)
         case failure(Error)
         
-        static func == (lhs: PhotoScannerModel.ImageState, rhs: PhotoScannerModel.ImageState) -> Bool {
+        static func == (lhs: PhotoPickerModel.ImageState, rhs: PhotoPickerModel.ImageState) -> Bool {
             switch(lhs, rhs) {
                 case (.empty, .empty),
                     (.loading, .loading),
@@ -38,25 +36,15 @@ class PhotoScannerModel: ObservableObject {
     }
     
     struct PhotoScannerImage: Transferable {
-        let image: Image
+        let image: UIImage
         
         static var transferRepresentation: some TransferRepresentation {
             DataRepresentation(importedContentType: .image) { data in
-            #if canImport(AppKit)
-                guard let nsImage = NSImage(data: data) else {
-                    throw TransferError.importFailed
-                }
-                let image = Image(nsImage: nsImage)
-                return PhotoScannerImage(image: image)
-            #elseif canImport(UIKit)
                 guard let uiImage = UIImage(data: data) else {
                     throw TransferError.importFailed
                 }
-                let image = Image(uiImage: uiImage)
+                let image = uiImage
                 return PhotoScannerImage(image: image)
-			#else
-                throw TransferError.importFailed
-			#endif
             }
         }
     }
@@ -84,8 +72,8 @@ class PhotoScannerModel: ObservableObject {
                     return
                 }
                 switch result {
-                    case .success(let profileImage?):
-                        self.imageState = .success(profileImage.image)
+                    case .success(let photo?):
+                        self.imageState = .success(photo.image)
                     case .success(nil):
                         self.imageState = .empty
                     case .failure(let error):

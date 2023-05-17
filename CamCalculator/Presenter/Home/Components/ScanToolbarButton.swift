@@ -9,7 +9,7 @@ import SwiftUI
 import PhotosUI
 
 struct ScanToolbarButton: View {
-    @ObservedObject var viewModel: PhotoScannerModel
+    @ObservedObject var viewModel: PhotoPickerModel
     
     var body: some View {
         #if false
@@ -25,7 +25,7 @@ struct ScanToolbarButton: View {
 struct ScanToolbarButton_Previews: PreviewProvider {
     static var previews: some View {
         ScanToolbarButton(
-        	viewModel: PhotoScannerModel()
+        	viewModel: PhotoPickerModel()
         )
     }
 }

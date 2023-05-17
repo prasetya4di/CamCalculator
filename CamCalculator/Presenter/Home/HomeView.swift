@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject private var photoScannerModel = PhotoScannerModel()
+    @StateObject private var photoScannerModel = PhotoPickerModel()
     @State private var databaseSource: DatabaseSource = .realmDb
     let scanDatas: [ScanData]
     

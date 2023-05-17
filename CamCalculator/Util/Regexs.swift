@@ -7,4 +7,4 @@
 
 import Foundation
 
-let supportedMathPattern = "^\\d+[+-/*x:]\\d+"
+let supportedMathPattern = #"(?:\d+[-+/*x:])\d+"#
