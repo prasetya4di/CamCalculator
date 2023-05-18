@@ -23,4 +23,16 @@ extension String {
         
         return nil
     }
+    
+    func matchesRegex(pattern: String) -> Bool {
+        do {
+            let regex = try NSRegularExpression(pattern: pattern, options: [])
+            let range = NSRange(location: 0, length: self.utf16.count)
+            let matches = regex.matches(in: self, options: [], range: range)
+            return !matches.isEmpty
+        } catch {
+            print("Invalid regex pattern: \(error.localizedDescription)")
+            return false
+        }
+    }
 }

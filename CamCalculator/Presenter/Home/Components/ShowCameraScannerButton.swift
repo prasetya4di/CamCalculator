@@ -14,7 +14,7 @@ struct ShowCameraScannerButton: View {
         Button {
             showCameraScanner = true
         } label: {
-            Text("Add Input")
+            AddInputText()
         }
         .navigationDestination(isPresented: $showCameraScanner) {
             CameraScannerView()
