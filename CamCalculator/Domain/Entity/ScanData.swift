@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ScanData: Identifiable {
+struct ScanData: Identifiable, Equatable {
     let id: UUID = UUID()
     let input: String
     let result: String
@@ -16,5 +16,12 @@ struct ScanData: Identifiable {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMM yyyy HH:mm"
         return dateFormatter.string(from: createdDate)
+    }
+    
+    static func == (lhs: ScanData, rhs: ScanData) -> Bool {
+        return lhs.id == rhs.id
+        && lhs.input == rhs.input
+        && lhs.result == rhs.result
+        && lhs.createdDate == rhs.createdDate
     }
 }

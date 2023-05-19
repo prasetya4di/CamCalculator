@@ -28,23 +28,3 @@ struct HomeView: View {
         }
     }
 }
-
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        let scanData = ScanData(
-            input: "2 + 3",
-            result: "5",
-            createdDate: .now
-        )
-        
-        HomeView(
-        	scanDatas: [
-                scanData,
-                scanData,
-                scanData,
-                scanData,
-            	scanData,
-            ]
-        )
-    }
-}

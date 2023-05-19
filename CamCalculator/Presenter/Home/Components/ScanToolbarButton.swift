@@ -62,8 +62,6 @@ struct ScanToolbarButton: View {
                     with: supportedMathPattern)
         }
         .first ?? ""
-        
-        print("Result = \(scannedText)")
     }
 }
 

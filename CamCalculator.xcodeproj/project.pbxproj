@@ -48,6 +48,11 @@
 		4433A5612A148F4000BC6D5F /* ShowPhotoScannerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5602A148F4000BC6D5F /* ShowPhotoScannerButton.swift */; };
 		4433A56B2A16427700BC6D5F /* ShowDocumentScannerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A56A2A16427700BC6D5F /* ShowDocumentScannerButton.swift */; };
 		4433A56D2A1643B200BC6D5F /* AddInputText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A56C2A1643B200BC6D5F /* AddInputText.swift */; };
+		4433A56F2A16630800BC6D5F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A56E2A16630800BC6D5F /* HomeViewModel.swift */; };
+		4433A5712A16637E00BC6D5F /* HomeViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5702A16637E00BC6D5F /* HomeViewState.swift */; };
+		4433A5732A1665F300BC6D5F /* HomeViewIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5722A1665F300BC6D5F /* HomeViewIntent.swift */; };
+		4433A5752A1668A700BC6D5F /* PublisherExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5742A1668A700BC6D5F /* PublisherExtension.swift */; };
+		4433A5772A166B3900BC6D5F /* HomeViewResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5762A166B3900BC6D5F /* HomeViewResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +95,11 @@
 		4433A5602A148F4000BC6D5F /* ShowPhotoScannerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPhotoScannerButton.swift; sourceTree = "<group>"; };
 		4433A56A2A16427700BC6D5F /* ShowDocumentScannerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDocumentScannerButton.swift; sourceTree = "<group>"; };
 		4433A56C2A1643B200BC6D5F /* AddInputText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInputText.swift; sourceTree = "<group>"; };
+		4433A56E2A16630800BC6D5F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		4433A5702A16637E00BC6D5F /* HomeViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewState.swift; sourceTree = "<group>"; };
+		4433A5722A1665F300BC6D5F /* HomeViewIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewIntent.swift; sourceTree = "<group>"; };
+		4433A5742A1668A700BC6D5F /* PublisherExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherExtension.swift; sourceTree = "<group>"; };
+		4433A5762A166B3900BC6D5F /* HomeViewResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +257,10 @@
 			children = (
 				4433A5362A135C7900BC6D5F /* Components */,
 				4433A5342A135B3800BC6D5F /* HomeView.swift */,
+				4433A56E2A16630800BC6D5F /* HomeViewModel.swift */,
+				4433A5702A16637E00BC6D5F /* HomeViewState.swift */,
+				4433A5722A1665F300BC6D5F /* HomeViewIntent.swift */,
+				4433A5762A166B3900BC6D5F /* HomeViewResult.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -281,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				4433A54C2A13B9C600BC6D5F /* StringExtension.swift */,
+				4433A5742A1668A700BC6D5F /* PublisherExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -385,10 +400,12 @@
 			files = (
 				4433A5422A13653600BC6D5F /* ErrorView.swift in Sources */,
 				4433A5182A133B7600BC6D5F /* SettingRepository.swift in Sources */,
+				4433A5712A16637E00BC6D5F /* HomeViewState.swift in Sources */,
 				4433A51A2A133BA500BC6D5F /* ReadDatabaseSource.swift in Sources */,
 				4433A4F62A13339100BC6D5F /* ContentView.swift in Sources */,
 				4433A5242A133E0B00BC6D5F /* SettingTable.swift in Sources */,
 				4433A5212A133D2100BC6D5F /* SettingLocalSource.swift in Sources */,
+				4433A5732A1665F300BC6D5F /* HomeViewIntent.swift in Sources */,
 				4433A5402A1364B800BC6D5F /* LoadingView.swift in Sources */,
 				4433A52A2A134C4A00BC6D5F /* EncryptedFileManager.swift in Sources */,
 				4433A5532A13C29100BC6D5F /* ScanTextInfoView.swift in Sources */,
@@ -399,15 +416,18 @@
 				4433A4F42A13339100BC6D5F /* CamCalculatorApp.swift in Sources */,
 				4433A5122A13392800BC6D5F /* SaveScanData.swift in Sources */,
 				4433A54D2A13B9C600BC6D5F /* StringExtension.swift in Sources */,
+				4433A5772A166B3900BC6D5F /* HomeViewResult.swift in Sources */,
 				4433A50F2A1338DF00BC6D5F /* ScanDataRepository.swift in Sources */,
 				4433A51C2A133C0E00BC6D5F /* UpdateDatabaseSource.swift in Sources */,
 				4433A5472A13681000BC6D5F /* CameraScannerView.swift in Sources */,
+				4433A56F2A16630800BC6D5F /* HomeViewModel.swift in Sources */,
 				4433A56B2A16427700BC6D5F /* ShowDocumentScannerButton.swift in Sources */,
 				4433A5262A13445900BC6D5F /* ScanDataTable.swift in Sources */,
 				4433A5162A133AE700BC6D5F /* Setting.swift in Sources */,
 				4433A5452A1367BB00BC6D5F /* CameraView.swift in Sources */,
 				4433A5612A148F4000BC6D5F /* ShowPhotoScannerButton.swift in Sources */,
 				4433A53E2A1363F700BC6D5F /* PickerDatabaseSource.swift in Sources */,
+				4433A5752A1668A700BC6D5F /* PublisherExtension.swift in Sources */,
 				4433A52C2A134DC700BC6D5F /* ScanEncryptedFileSource.swift in Sources */,
 				4433A55A2A13CBE400BC6D5F /* PhotoPickerModel.swift in Sources */,
 				4433A5282A13457500BC6D5F /* ScanLocalSource.swift in Sources */,
