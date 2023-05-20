@@ -24,7 +24,7 @@ struct ScanResultItem: View {
         .padding()
         .background {
             RoundedRectangle(cornerRadius: 4)
-                .stroke(.red, lineWidth: 0.45)
+                .stroke(Color.primaryColor, lineWidth: 0.45)
         }
         .padding(.horizontal)
         .padding(.top, 4)

@@ -13,19 +13,21 @@ struct ScanToolbarButton: View {
     @ObservedObject var viewModel: PhotoPickerModel
     
     var body: some View {
-        #if false
+        #if APP_RED_BUILT_IN_CAMERA
         ShowCameraScannerButton()
-        #elseif false
+        #elseif APP_RED_CAMERA_ROLL || APP_GREEN_CAMERA_ROLL
         ShowPhotoScannerButton(
         	viewModel: viewModel,
             scannedText: $scannedText,
             scanPhoto: scanPhoto
         )
-        #else
+        #elseif APP_GREEN_FILESYSTEM
         ShowDocumentScannerButton(
             scannedText: $scannedText,
             scanPhoto: scanPhoto
         )
+        #else
+        EmptyView()
         #endif
     }
     
