@@ -44,7 +44,11 @@ class HomeViewModel: ObservableObject {
             .flatMap { [unowned self] intent in
                 self.process(intent)
             }
-            .sink(receiveValue: reduce(_:))
+            .combineLatest(Just(viewState))
+            .map { [unowned self] intentResult, currentState in
+                self.reduce(currentState, intentResult)
+            }
+            .assign(to: \.viewState, on: self)
             .store(in: &cancellables)
     }
     
@@ -70,7 +74,7 @@ class HomeViewModel: ObservableObject {
                 .eraseToAnyPublisher()
             case .changeDatabaseSource(let databaseSource):
                 return createPublisher { [unowned self] in
-                    try await self.updateDatabaseSource.call(databaseSource)
+                    try self.updateDatabaseSource.call(databaseSource)
                 }
                 .flatMap {
                     return createPublisher {
@@ -89,7 +93,47 @@ class HomeViewModel: ObservableObject {
         }
     }
     
-    private func reduce(_ result: HomeViewResult) {
+    private func reduce(_ prevState: HomeViewState, _ result: HomeViewResult) -> HomeViewState {
+        var state = prevState
+        switch result {
+            case .fetchAllDataResult(let status):
+                switch status {
+                    case .loading:
+                        state.isLoading = true
+                        break
+                    case .success(let source, let scanDatas):
+                        state.isLoading = false
+                        state.databaseSource = source
+                        state.scanDatas = scanDatas
+                        break
+                    case .error(let error):
+                        state.isLoading = false
+                        state.error = error
+                        print(error)
+                        print(error.localizedDescription)
+                        break
+                }
+            case .changeDatabaseSourceResult(let status):
+                switch status {
+                    case .loading:
+                        state.isLoading = true
+                        break
+                    case .success(let source, let scanDatas):
+                        state.isLoading = false
+                        state.databaseSource = source
+                        state.scanDatas = scanDatas
+                        break
+                    case .error(let error):
+                        state.isLoading = false
+                        state.error = error
+                        print(error)
+                        print(error.localizedDescription)
+                        break
+                }
+            case .nothing:
+                break
+        }
         
+        return state
     }
 }

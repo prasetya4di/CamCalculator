@@ -8,17 +8,29 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var viewModel: HomeViewModel
     @StateObject private var photoScannerModel = PhotoPickerModel()
-    @State private var databaseSource: DatabaseSource = .realmDb
-    let scanDatas: [ScanData]
+    private var databaseSource: Binding<DatabaseSource> {
+        Binding<DatabaseSource> (
+            get: {
+                return viewModel.viewState.databaseSource
+            },
+            set: { newValue in
+                viewModel.dispatch(.changeDatabaseSource(newValue))
+            }
+        )
+    }
     
     var body: some View {
         ScrollView {
             VStack {
-                PickerDatabaseSource(databaseSource: $databaseSource)
-                ScanResults(scanDatas: scanDatas)
+                PickerDatabaseSource(databaseSource: databaseSource)
+                ScanResults(scanDatas: viewModel.viewState.scanDatas)
                 Spacer()
             }
+        }
+        .onAppear {
+            viewModel.dispatch(.getAllData)
         }
         .navigationTitle("Cam Calculator")
         .toolbar {

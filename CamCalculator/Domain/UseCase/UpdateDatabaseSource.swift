@@ -9,7 +9,7 @@ import Combine
 import Foundation
 
 protocol UpdateDatabaseSource {
-    func call(_ source: DatabaseSource) async throws
+    func call(_ source: DatabaseSource) throws
 }
 
 class UpdateDatabaseSourceImpl: UpdateDatabaseSource {
@@ -19,8 +19,8 @@ class UpdateDatabaseSourceImpl: UpdateDatabaseSource {
         self.repository = repository
     }
     
-    func call(_ source: DatabaseSource) async throws {
+    func call(_ source: DatabaseSource) throws {
         let setting = Setting(databaseSource: source)
-        try await repository.update(setting)
+        try repository.update(setting)
     }
 }

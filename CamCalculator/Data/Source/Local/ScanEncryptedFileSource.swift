@@ -18,7 +18,7 @@ class ScanEncryptedFileSource: ScanLocalSource {
         return try fileManager.loadData() ?? []
     }
     
-    func insert(_ scanData: ScanDataTable) async throws {
+    func insert(_ scanData: ScanDataTable) throws {
         try fileManager.saveData(scanData)
     }
 }

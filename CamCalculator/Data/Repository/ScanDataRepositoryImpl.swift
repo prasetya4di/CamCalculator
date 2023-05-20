@@ -10,9 +10,9 @@ import Foundation
 class ScanDataRepositoryImpl: ScanDataRepository {
     private let settingLocalSource: SettingLocalSource
     private let scanLocalSource: ScanLocalSource
-    private let scanEncryptedFile: ScanEncryptedFileSource
+    private let scanEncryptedFile: ScanLocalSource
     
-    init(settingLocalSource: SettingLocalSource, scanLocalSource: ScanLocalSource, scanEncryptedFile: ScanEncryptedFileSource) {
+    init(settingLocalSource: SettingLocalSource, scanLocalSource: ScanLocalSource, scanEncryptedFile: ScanLocalSource) {
         self.settingLocalSource = settingLocalSource
         self.scanLocalSource = scanLocalSource
         self.scanEncryptedFile = scanEncryptedFile
@@ -23,11 +23,11 @@ class ScanDataRepositoryImpl: ScanDataRepository {
             case .realmDb:
                 return try scanLocalSource.read().map { $0.toEntity() }
             case .file:
-                return try scanEncryptedFile.read().map { $0.toEntity() }
+                return try scanLocalSource.read().map { $0.toEntity() }
         }
     }
     
-    func save(_ scanData: ScanData) async throws {
+    func save(_ scanData: ScanData) throws {
         let data = ScanDataTable(
             input: scanData.input,
             result: scanData.result,
@@ -35,9 +35,9 @@ class ScanDataRepositoryImpl: ScanDataRepository {
         )
         switch try checkSource() {
             case .realmDb:
-                try await scanLocalSource.insert(data)
+                try scanLocalSource.insert(data)
             case .file:
-                try await scanEncryptedFile.insert(data)
+                try scanLocalSource.insert(data)
         }
     }
     

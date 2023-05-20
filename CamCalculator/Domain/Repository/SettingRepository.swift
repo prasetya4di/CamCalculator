@@ -9,5 +9,5 @@ import Foundation
 
 protocol SettingRepository {
     func read() throws -> Setting
-    func update(_ setting: Setting) async throws
+    func update(_ setting: Setting) throws
 }

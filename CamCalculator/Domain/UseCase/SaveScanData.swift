@@ -14,7 +14,7 @@ protocol SaveScanData {
 class SaveScanDataImpl: SaveScanData {
     private let repository: ScanDataRepository
     
-    init(_ repository: ScanDataRepository) {
+    init(repository: ScanDataRepository) {
         self.repository = repository
     }
     
@@ -24,7 +24,7 @@ class SaveScanDataImpl: SaveScanData {
             result: result,
             createdDate: .now
         )
-        try await repository.save(data)
+        try repository.save(data)
         return data
     }
 }

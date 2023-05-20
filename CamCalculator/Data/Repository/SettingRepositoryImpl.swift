@@ -18,8 +18,8 @@ class SettingRepositoryImpl: SettingRepository {
         return try settingLocalSource.read().toEntity()
     }
     
-    func update(_ setting: Setting) async throws {
-        try await settingLocalSource.update(
+    func update(_ setting: Setting) throws {
+        try settingLocalSource.update(
             SettingTable(
                 databaseSource: setting.databaseSource.rawValue))
     }

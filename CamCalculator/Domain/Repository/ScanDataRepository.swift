@@ -9,5 +9,5 @@ import Foundation
 
 protocol ScanDataRepository {
     func read() throws -> [ScanData]
-    func save(_ scanData: ScanData) async throws
+    func save(_ scanData: ScanData) throws
 }

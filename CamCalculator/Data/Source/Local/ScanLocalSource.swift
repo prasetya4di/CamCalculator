@@ -10,7 +10,7 @@ import RealmSwift
 
 protocol ScanLocalSource {
     func read() throws -> [ScanDataTable]
-    func insert(_ scanData: ScanDataTable) async throws
+    func insert(_ scanData: ScanDataTable) throws
 }
 
 class ScanLocalSourceImpl: ScanLocalSource {
@@ -24,8 +24,8 @@ class ScanLocalSourceImpl: ScanLocalSource {
         return realm.objects(ScanDataTable.self).map { $0 }
     }
     
-    func insert(_ scanData: ScanDataTable) async throws {
-        try! await realm.asyncWrite {
+    func insert(_ scanData: ScanDataTable) throws {
+        try! realm.write {
             realm.add(scanData)
         }
     }
