@@ -10,9 +10,10 @@ import SwiftUI
 import VisionKit
 
 struct CameraScannerView: View {
+    @Environment(\.presentationMode) var presentationMode
     @State private var startScanning = false
     @State private var showInvalidTextToast = false
-    @State private var scannedText = ""
+    @Binding var scannedText: String
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -35,11 +36,16 @@ struct CameraScannerView: View {
                 startScanning.toggle()
             }
         }
+        .onChange(of: scannedText) { newValue in
+            self.presentationMode.wrappedValue.dismiss()
+        }
     }
 }
 
 struct ScannerVIew_Previews: PreviewProvider {
     static var previews: some View {
-        CameraScannerView()
+        CameraScannerView(
+            scannedText: .constant("")
+        )
     }
 }

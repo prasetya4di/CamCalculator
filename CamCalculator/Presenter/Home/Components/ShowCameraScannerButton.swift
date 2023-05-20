@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ShowCameraScannerButton: View {
     @State private var showCameraScanner = false
+    @Binding var scannedText: String
     
     var body: some View {
         Button {
@@ -17,13 +18,17 @@ struct ShowCameraScannerButton: View {
             AddInputText()
         }
         .navigationDestination(isPresented: $showCameraScanner) {
-            CameraScannerView()
+            CameraScannerView(
+            	scannedText: $scannedText
+            )
         }
     }
 }
 
 struct ShowCameraScannerButton_Previews: PreviewProvider {
     static var previews: some View {
-        ShowCameraScannerButton()
+        ShowCameraScannerButton(
+            scannedText: .constant("")
+        )
     }
 }
