@@ -11,7 +11,7 @@ import Foundation
 class HomeViewModel: ObservableObject {
     private var viewStateSubject = CurrentValueSubject<HomeViewState, Never>(.idle())
     
-    @Published var viewState: HomeViewState = .idle()
+    @Published private(set) var viewState: HomeViewState = .idle()
     
     private var cancellables = Set<AnyCancellable>()
     
