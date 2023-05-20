@@ -10,6 +10,17 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject var viewModel: HomeViewModel
     @StateObject private var photoScannerModel = PhotoPickerModel()
+    private var scannedText: Binding<String> {
+        Binding<String> (
+            get : {
+                return ""
+            },
+            set: { input in
+                viewModel.dispatch(.insertScan(input))
+            }
+        )
+    }
+    
     private var databaseSource: Binding<DatabaseSource> {
         Binding<DatabaseSource> (
             get: {
@@ -35,7 +46,10 @@ struct HomeView: View {
         .navigationTitle("Cam Calculator")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                ScanToolbarButton(viewModel: photoScannerModel)
+                ScanToolbarButton(
+                    scannedText: scannedText,
+                    viewModel: photoScannerModel
+                )
             }
         }
     }

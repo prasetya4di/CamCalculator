@@ -10,4 +10,5 @@ import Foundation
 enum HomeViewIntent {
     case getAllData
     case changeDatabaseSource(_ databaseSource: DatabaseSource)
+    case insertScan(_ input: String)
 }

@@ -53,6 +53,7 @@
 		4433A5732A1665F300BC6D5F /* HomeViewIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5722A1665F300BC6D5F /* HomeViewIntent.swift */; };
 		4433A5752A1668A700BC6D5F /* PublisherExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5742A1668A700BC6D5F /* PublisherExtension.swift */; };
 		4433A5772A166B3900BC6D5F /* HomeViewResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A5762A166B3900BC6D5F /* HomeViewResult.swift */; };
+		44A8BD932A18D65300BE536D /* CalculateOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A8BD922A18D65300BE536D /* CalculateOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +101,7 @@
 		4433A5722A1665F300BC6D5F /* HomeViewIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewIntent.swift; sourceTree = "<group>"; };
 		4433A5742A1668A700BC6D5F /* PublisherExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherExtension.swift; sourceTree = "<group>"; };
 		4433A5762A166B3900BC6D5F /* HomeViewResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewResult.swift; sourceTree = "<group>"; };
+		44A8BD922A18D65300BE536D /* CalculateOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 				4433A5132A1339F200BC6D5F /* ReadScanData.swift */,
 				4433A5192A133BA500BC6D5F /* ReadDatabaseSource.swift */,
 				4433A51B2A133C0E00BC6D5F /* UpdateDatabaseSource.swift */,
+				44A8BD922A18D65300BE536D /* CalculateOperation.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44A8BD932A18D65300BE536D /* CalculateOperation.swift in Sources */,
 				4433A5422A13653600BC6D5F /* ErrorView.swift in Sources */,
 				4433A5182A133B7600BC6D5F /* SettingRepository.swift in Sources */,
 				4433A5712A16637E00BC6D5F /* HomeViewState.swift in Sources */,

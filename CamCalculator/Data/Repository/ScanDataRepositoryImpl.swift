@@ -23,7 +23,7 @@ class ScanDataRepositoryImpl: ScanDataRepository {
             case .realmDb:
                 return try scanLocalSource.read().map { $0.toEntity() }
             case .file:
-                return try scanLocalSource.read().map { $0.toEntity() }
+                return try scanEncryptedFile.read().map { $0.toEntity() }
         }
     }
     
@@ -37,7 +37,7 @@ class ScanDataRepositoryImpl: ScanDataRepository {
             case .realmDb:
                 try scanLocalSource.insert(data)
             case .file:
-                try scanLocalSource.insert(data)
+                try scanEncryptedFile.insert(data)
         }
     }
     

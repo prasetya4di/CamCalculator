@@ -9,24 +9,31 @@ import SwiftUI
 import Vision
 
 struct ScanToolbarButton: View {
-    @State private var scannedText = ""
+    @Binding var scannedText: String
     @ObservedObject var viewModel: PhotoPickerModel
     
     var body: some View {
-        #if false
-        ShowCameraScannerButton()
-        #elseif false
-        ShowPhotoScannerButton(
-        	viewModel: viewModel,
-            scannedText: $scannedText,
-            scanPhoto: scanPhoto
-        )
-        #else
-        ShowDocumentScannerButton(
-            scannedText: $scannedText,
-            scanPhoto: scanPhoto
-        )
-        #endif
+//        #if false
+//        ShowCameraScannerButton()
+//        #elseif false
+//        ShowPhotoScannerButton(
+//        	viewModel: viewModel,
+//            scannedText: $scannedText,
+//            scanPhoto: scanPhoto
+//        )
+//        #else
+//        ShowDocumentScannerButton(
+//            scannedText: $scannedText,
+//            scanPhoto: scanPhoto
+//        )
+//        #endif
+        
+        Button {
+            scannedText = "2+3"
+        } label: {
+            Text("Add Input")
+        }
+
     }
     
     func scanPhoto(_ image: UIImage) {
@@ -68,6 +75,7 @@ struct ScanToolbarButton: View {
 struct ScanToolbarButton_Previews: PreviewProvider {
     static var previews: some View {
         ScanToolbarButton(
+            scannedText: .constant(""),
         	viewModel: PhotoPickerModel()
         )
     }

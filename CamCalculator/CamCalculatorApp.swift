@@ -14,9 +14,11 @@ struct CamCalculatorApp: SwiftUI.App {
     
     init() {
         var realm: Realm!
+        var realm2: Realm!
         
         do {
             realm = try Realm()
+            realm2 = try Realm()
         } catch {
             print("Error when init app")
         }
@@ -38,7 +40,7 @@ struct CamCalculatorApp: SwiftUI.App {
         
         let settingLocalSource: SettingLocalSource = SettingLocalSourceImpl(realm: realm)
         let scanLocalSource: ScanLocalSource = ScanLocalSourceImpl(realm: realm)
-        let scanEncryptedFileSource: ScanLocalSource = ScanEncryptedFileSource(fileManager: encryptedFileManager)
+        let scanEncryptedFileSource: ScanLocalSource = ScanLocalSourceImpl(realm: realm2)
         
         let settingRepository: SettingRepository = SettingRepositoryImpl(
             settingLocalSource: settingLocalSource
@@ -57,12 +59,14 @@ struct CamCalculatorApp: SwiftUI.App {
             repository: settingRepository)
         let updateDatabaseSource: UpdateDatabaseSource = UpdateDatabaseSourceImpl(
             repository: settingRepository)
+        let calculateOperation: CalculateOperation = CalculateOperationImpl()
         
         _homeViewModel = StateObject(wrappedValue: HomeViewModel(
             saveScanData,
             readScanData,
             readDatabaseSource,
-            updateDatabaseSource
+            updateDatabaseSource,
+            calculateOperation
         ))
     }
     
