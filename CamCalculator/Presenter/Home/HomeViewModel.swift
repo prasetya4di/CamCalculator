@@ -126,7 +126,13 @@ class HomeViewModel: ObservableObject {
                 .eraseToAnyPublisher()
             case .scanImage(let image):
                 return scanImage.call(image)
-                    .flatMap { recognizedString in
+                    .flatMap { recognizedString -> AnyPublisher<HomeViewResult, Never> in
+                        guard !recognizedString.isEmpty else {
+                            return Empty(completeImmediately: true)
+                                .map { .scanImageResult(.empty) }
+                                .eraseToAnyPublisher()
+                        }
+                        
                         return createPublisher { [unowned self] in
                             self.calculateOperation.call(input: recognizedString)
                         }
@@ -135,9 +141,14 @@ class HomeViewModel: ObservableObject {
                                 try self.saveScanData.call(recognizedString, result)
                             }
                         }
-                    }
-                    .flatMap { scanData in
-                        return Just(.insertScanDataResult(.success(scanData)))
+                        .flatMap { scanData -> AnyPublisher<HomeViewResult, Never> in
+                            return Just(.insertScanDataResult(.success(scanData)))
+                                .eraseToAnyPublisher()
+                        }
+                        .catch { err in
+                            return Just(.insertScanDataResult(.error(err)))
+                        }
+                        .eraseToAnyPublisher()
                     }
                     .catch { err in
                         return Just(.insertScanDataResult(.error(err)))
