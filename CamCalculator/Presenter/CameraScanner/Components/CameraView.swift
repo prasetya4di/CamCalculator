@@ -11,7 +11,7 @@ import VisionKit
 
 struct CameraView: UIViewControllerRepresentable {
     
-    @Binding var startScanning: Bool
+    @Binding var scanning: Bool
     @Binding var scanText: String
     @Binding var showInvalidTextToast: Bool
     
@@ -29,7 +29,7 @@ struct CameraView: UIViewControllerRepresentable {
     
     func updateUIViewController(_ uiViewController: DataScannerViewController, context: Context) {
         
-        if startScanning {
+        if scanning {
             try? uiViewController.startScanning()
         } else {
             uiViewController.stopScanning()
@@ -61,6 +61,7 @@ struct CameraView: UIViewControllerRepresentable {
                     }
                     
                     parent.scanText = result
+                    parent.scanning = false
                     dataScanner.stopScanning()
                 default: break
             }

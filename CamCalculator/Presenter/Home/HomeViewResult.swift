@@ -45,6 +45,7 @@ enum HomeViewResult {
         case success(
             _ scanData: ScanData
         )
+        case empty
         case error(_ error: Error)
     }
 }

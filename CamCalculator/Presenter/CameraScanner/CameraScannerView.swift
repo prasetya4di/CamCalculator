@@ -11,14 +11,14 @@ import VisionKit
 
 struct CameraScannerView: View {
     @Environment(\.presentationMode) var presentationMode
-    @State private var startScanning = false
+    @State private var scanning = false
     @State private var showInvalidTextToast = false
     @Binding var scannedText: String
     
     var body: some View {
         ZStack(alignment: .bottom) {
             CameraView(
-                startScanning: $startScanning,
+                scanning: $scanning,
                 scanText: $scannedText,
                 showInvalidTextToast: $showInvalidTextToast
             )
@@ -32,12 +32,15 @@ struct CameraScannerView: View {
                 title: "Invalid Math Equations")
         }
         .task {
-            if DataScannerViewController.isSupported && DataScannerViewController.isAvailable {
-                startScanning.toggle()
+            if DataScannerViewController.isSupported
+                && DataScannerViewController.isAvailable {
+                scanning.toggle()
             }
         }
-        .onChange(of: scannedText) { newValue in
-            self.presentationMode.wrappedValue.dismiss()
+        .onChange(of: scanning) { newValue in
+            if !scanning {
+                self.presentationMode.wrappedValue.dismiss()
+            }
         }
     }
 }

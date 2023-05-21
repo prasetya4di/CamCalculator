@@ -207,6 +207,7 @@ class HomeViewModel: ObservableObject {
                         state.isLoading = false
                         state.error = error
                         break
+                    case .empty: break
                 }
             case .nothing:
                 break
