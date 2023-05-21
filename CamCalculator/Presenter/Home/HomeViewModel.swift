@@ -155,9 +155,6 @@ class HomeViewModel: ObservableObject {
                     case .error(let error):
                         state.isLoading = false
                         state.error = error
-                        print("Error when update database source")
-                        print(error)
-                        print(error.localizedDescription)
                         break
                 }
             case .insertScanDataResult(let status):
