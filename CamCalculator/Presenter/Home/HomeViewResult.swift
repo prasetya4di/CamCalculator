@@ -12,6 +12,7 @@ enum HomeViewResult {
     case changeDatabaseSourceResult(_ status: ChangeDatabaseSourceStatus)
     case insertScanDataResult(_ status: InsertScanDataStatus)
     case scanImageResult(_ status: ScanImageStatus)
+    case hideInvalidMathEquationToastResult
     case nothing
     
     enum FetchAllDataStatus {

@@ -125,11 +125,10 @@ class HomeViewModel: ObservableObject {
                 .prepend(.insertScanDataResult(.loading))
                 .eraseToAnyPublisher()
             case .scanImage(let image):
-                return scanImage.call(image)
+                return self.scanImage.call(image)
                     .flatMap { recognizedString -> AnyPublisher<HomeViewResult, Never> in
                         guard !recognizedString.isEmpty else {
-                            return Empty(completeImmediately: true)
-                                .map { .scanImageResult(.empty) }
+                            return Just(.scanImageResult(.empty))
                                 .eraseToAnyPublisher()
                         }
                         
@@ -142,18 +141,21 @@ class HomeViewModel: ObservableObject {
                             }
                         }
                         .flatMap { scanData -> AnyPublisher<HomeViewResult, Never> in
-                            return Just(.insertScanDataResult(.success(scanData)))
+                            return Just(.scanImageResult(.success(scanData)))
                                 .eraseToAnyPublisher()
                         }
                         .catch { err in
-                            return Just(.insertScanDataResult(.error(err)))
+                            return Just(.scanImageResult(.error(err)))
                         }
                         .eraseToAnyPublisher()
                     }
                     .catch { err in
-                        return Just(.insertScanDataResult(.error(err)))
+                        return Just(.scanImageResult(.error(err)))
                     }
-                    .prepend(.insertScanDataResult(.loading))
+                    .prepend(.scanImageResult(.loading))
+                    .eraseToAnyPublisher()
+            case .hideInvalidMathEquationToast:
+                return Just(.hideInvalidMathEquationToastResult)
                     .eraseToAnyPublisher()
         }
     }
@@ -165,61 +167,54 @@ class HomeViewModel: ObservableObject {
                 switch status {
                     case .loading:
                         state.isLoading = true
-                        break
                     case .success(let source, let scanDatas):
                         state.isLoading = false
                         state.databaseSource = source
                         state.scanDatas = scanDatas
-                        break
                     case .error(let error):
                         state.isLoading = false
                         state.error = error
-                        break
                 }
             case .changeDatabaseSourceResult(let status):
                 switch status {
                     case .loading:
                         state.isLoading = true
-                        break
                     case .success(let source, let scanDatas):
                         state.isLoading = false
                         state.databaseSource = source
                         state.scanDatas = scanDatas
-                        break
                     case .error(let error):
                         state.isLoading = false
                         state.error = error
-                        break
                 }
             case .insertScanDataResult(let status):
                 switch status {
                     case .loading:
                         state.isLoading = true
-                        break
                     case .success(let scanData):
                         state.isLoading = false
                         state.scanDatas.append(scanData)
-                        break
                     case .error(let error):
                         state.isLoading = false
                         state.error = error
-                        break
                 }
             case .scanImageResult(let status):
                 switch status {
                     case .loading:
-                        state.isLoading = true
-                        break
+                        state.showLoadingDialog = true
                     case .success(let scanData):
-                        state.isLoading = false
+                        state.showLoadingDialog = false
                         state.scanDatas.append(scanData)
-                        break
                     case .error(let error):
-                        state.isLoading = false
+                        state.showLoadingDialog = false
+                        state.showInvalidMathEquationToast = true
                         state.error = error
-                        break
-                    case .empty: break
+                    case .empty:
+                        state.showLoadingDialog = false
+                        state.showInvalidMathEquationToast = true
                 }
+            case .hideInvalidMathEquationToastResult:
+                state.showInvalidMathEquationToast = false
             case .nothing:
                 break
         }

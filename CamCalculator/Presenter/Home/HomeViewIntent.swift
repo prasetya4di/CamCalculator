@@ -13,4 +13,5 @@ enum HomeViewIntent {
     case changeDatabaseSource(_ databaseSource: DatabaseSource)
     case insertScan(_ input: String)
     case scanImage(_ image: UIImage)
+    case hideInvalidMathEquationToast
 }
