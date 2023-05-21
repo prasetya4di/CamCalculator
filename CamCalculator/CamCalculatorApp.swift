@@ -14,19 +14,20 @@ struct CamCalculatorApp: SwiftUI.App {
     
     init() {
         var realm: Realm!
-        var realm2: Realm!
         
         do {
             realm = try Realm()
-            realm2 = try Realm()
         } catch {
             print("Error when init app")
         }
         
         let fileManager = FileManager.default
-        let currentPathURL = URL(fileURLWithPath: fileManager.currentDirectoryPath)
         let filename = "data.enc"
-        let fileURL = currentPathURL.appendingPathComponent(filename)
+        // Get the appropriate directory URL for file creation
+        guard let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            fatalError("Unable to access document directory.")
+        }
+        let fileURL = documentDirectory.appendingPathComponent(filename)
         
         if !fileManager.fileExists(atPath: fileURL.path) {
             // Create the file
@@ -35,12 +36,13 @@ struct CamCalculatorApp: SwiftUI.App {
         
         let encryptedFileManager = EncryptedFileManager<ScanDataTable>(
             filePath: fileURL,
-            packageName: "com.pras.app"
+            packageName: Bundle.main.bundleIdentifier ?? ""
         )
         
         let settingLocalSource: SettingLocalSource = SettingLocalSourceImpl(realm: realm)
         let scanLocalSource: ScanLocalSource = ScanLocalSourceImpl(realm: realm)
-        let scanEncryptedFileSource: ScanLocalSource = ScanLocalSourceImpl(realm: realm2)
+        let scanEncryptedFileSource: ScanLocalSource = ScanEncryptedFileSource(
+            fileManager: encryptedFileManager)
         
         let settingRepository: SettingRepository = SettingRepositoryImpl(
             settingLocalSource: settingLocalSource
