@@ -8,12 +8,13 @@
 import Foundation
 
 enum HomeViewResult {
-    case fetchAllDataResult(_ status: fetchAllDataStatus)
-    case changeDatabaseSourceResult(_ status: changeDatabaseSourceStatus)
-    case insertScanDataResult(_ status: insertScanDataStatus)
+    case fetchAllDataResult(_ status: FetchAllDataStatus)
+    case changeDatabaseSourceResult(_ status: ChangeDatabaseSourceStatus)
+    case insertScanDataResult(_ status: InsertScanDataStatus)
+    case scanImageResult(_ status: ScanImageStatus)
     case nothing
     
-    enum fetchAllDataStatus {
+    enum FetchAllDataStatus {
         case loading
         case success(
             _ databaseSource: DatabaseSource,
@@ -22,7 +23,7 @@ enum HomeViewResult {
         case error(_ error: Error)
     }
     
-    enum changeDatabaseSourceStatus {
+    enum ChangeDatabaseSourceStatus {
         case loading
         case success(
             _ databaseSource: DatabaseSource,
@@ -31,9 +32,17 @@ enum HomeViewResult {
         case error(_ error: Error)
     }
     
-    enum insertScanDataStatus {
+    enum InsertScanDataStatus {
         case loading
     	case success(
+            _ scanData: ScanData
+        )
+        case error(_ error: Error)
+    }
+    
+    enum ScanImageStatus {
+        case loading
+        case success(
             _ scanData: ScanData
         )
         case error(_ error: Error)

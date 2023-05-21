@@ -52,7 +52,9 @@ struct HomeView: View {
                 ScanToolbarButton(
                     scannedText: scannedText,
                     viewModel: photoScannerModel
-                )
+                ) { image in
+                    viewModel.dispatch(.scanImage(image))
+                }
             }
         }
     }

@@ -22,19 +22,22 @@ class HomeViewModel: ObservableObject {
     private let readDatabaseSource: ReadDatabaseSource
     private let updateDatabaseSource: UpdateDatabaseSource
     private let calculateOperation: CalculateOperation
+    private let scanImage: ScanImage
     
     init (
         _ saveScanData: SaveScanData,
         _ readScanData: ReadScanData,
         _ readDatabaseSource: ReadDatabaseSource,
         _ updateDatabaseSource: UpdateDatabaseSource,
-        _ calculateOperation: CalculateOperation
+        _ calculateOperation: CalculateOperation,
+        _ scanImage: ScanImage
     ) {
         self.saveScanData = saveScanData
         self.readScanData = readScanData
         self.readDatabaseSource = readDatabaseSource
         self.updateDatabaseSource = updateDatabaseSource
         self.calculateOperation = calculateOperation
+        self.scanImage = scanImage
         
         bind()
     }
@@ -121,6 +124,26 @@ class HomeViewModel: ObservableObject {
                 }
                 .prepend(.insertScanDataResult(.loading))
                 .eraseToAnyPublisher()
+            case .scanImage(let image):
+                return scanImage.call(image)
+                    .flatMap { recognizedString in
+                        return createPublisher { [unowned self] in
+                            self.calculateOperation.call(input: recognizedString)
+                        }
+                        .flatMap { result in
+                            createPublisher { [unowned self] in
+                                try self.saveScanData.call(recognizedString, result)
+                            }
+                        }
+                    }
+                    .flatMap { scanData in
+                        return Just(.insertScanDataResult(.success(scanData)))
+                    }
+                    .catch { err in
+                        return Just(.insertScanDataResult(.error(err)))
+                    }
+                    .prepend(.insertScanDataResult(.loading))
+                    .eraseToAnyPublisher()
         }
     }
     
@@ -158,6 +181,20 @@ class HomeViewModel: ObservableObject {
                         break
                 }
             case .insertScanDataResult(let status):
+                switch status {
+                    case .loading:
+                        state.isLoading = true
+                        break
+                    case .success(let scanData):
+                        state.isLoading = false
+                        state.scanDatas.append(scanData)
+                        break
+                    case .error(let error):
+                        state.isLoading = false
+                        state.error = error
+                        break
+                }
+            case .scanImageResult(let status):
                 switch status {
                     case .loading:
                         state.isLoading = true

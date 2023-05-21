@@ -62,13 +62,15 @@ struct CamCalculatorApp: SwiftUI.App {
         let updateDatabaseSource: UpdateDatabaseSource = UpdateDatabaseSourceImpl(
             repository: settingRepository)
         let calculateOperation: CalculateOperation = CalculateOperationImpl()
+        let scanImage: ScanImage = ScanImageImpl()
         
         _homeViewModel = StateObject(wrappedValue: HomeViewModel(
             saveScanData,
             readScanData,
             readDatabaseSource,
             updateDatabaseSource,
-            calculateOperation
+            calculateOperation,
+            scanImage
         ))
     }
     
