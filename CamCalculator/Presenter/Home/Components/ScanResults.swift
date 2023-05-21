@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct ScanResults: View {
+    let isLoading: Bool
     let scanDatas: [ScanData]
     
     var body: some View {
         VStack {
-            ForEach(scanDatas) { data in
-                ScanResultItem(scanData: data)
+            if isLoading {
+                LoadingView()
+            } else {
+                ForEach(scanDatas) { data in
+                    ScanResultItem(scanData: data)
+                }
             }
         }
     }
@@ -27,7 +32,9 @@ struct ScanResults_Previews: PreviewProvider {
             createdDate: .now
         )
         
-        ScanResults(scanDatas: [
+        ScanResults(
+            isLoading: false,
+            scanDatas: [
             scanData,
             scanData,
             scanData,

@@ -36,7 +36,10 @@ struct HomeView: View {
         ScrollView {
             VStack {
                 PickerDatabaseSource(databaseSource: databaseSource)
-                ScanResults(scanDatas: viewModel.viewState.scanDatas)
+                ScanResults(
+                    isLoading: viewModel.viewState.isLoading,
+                    scanDatas: viewModel.viewState.scanDatas
+                )
                 Spacer()
             }
         }
