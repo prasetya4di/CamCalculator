@@ -105,8 +105,6 @@
 		44A8BD922A18D65300BE536D /* CalculateOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateOperation.swift; sourceTree = "<group>"; };
 		44A8BD9C2A18E64400BE536D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44A8BD9D2A18E72000BE536D /* ColorsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsExtension.swift; sourceTree = "<group>"; };
-		44A8BDE02A18EBF600BE536D /* CamCalculator copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "CamCalculator copy-Info.plist"; path = "/Users/prasetya/Projects/xcode/CamCalculator/CamCalculator copy-Info.plist"; sourceTree = "<absolute>"; };
-		44A8BE2B2A19242D00BE536D /* CamCalculator copy2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "CamCalculator copy2-Info.plist"; path = "/Users/prasetya/Projects/xcode/CamCalculator/CamCalculator copy2-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,8 +126,6 @@
 			children = (
 				4433A4F22A13339100BC6D5F /* CamCalculator */,
 				4433A4F12A13339100BC6D5F /* Products */,
-				44A8BDE02A18EBF600BE536D /* CamCalculator copy-Info.plist */,
-				44A8BE2B2A19242D00BE536D /* CamCalculator copy2-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
